@@ -1,14 +1,10 @@
-//ChatGPTBu kod, bir Next.js uygulamasında Clerk ile entegre edilmiş bir webhooks endpoint'ini işlemek için yazılmış bir HTTP fonksiyonunu içerir. Clerk, kullanıcı kimlik doğrulama ve yönetimini sağlayan bir hizmettir.
-
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
 import { clerkClient } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-//Kodun başlangıcında, gerekli modüller ve kütüphaneler içeri aktarılır. svix modülü, Clerk ile entegre edilmiş webhooks işleme için kullanılır.
 
-//Kod, bir HTTP POST isteğine yanıt veren bir POST fonksiyonunu içerir. Bu fonksiyon, Clerk webhooks'larından gelen istekleri işler.
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
