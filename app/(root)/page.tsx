@@ -1,3 +1,4 @@
+import Collection from "@/components/shared/Collection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,6 +38,15 @@ export default function Home() {
           <div className="flex flex-col w-full gap-5 md:flex-row">
             Search Category Filter
           </div>
+          <Collection
+            data={[]}
+            emptyTitle="No Events found"
+            emptyStateSubtext="Come back later"
+            collectionType="All_Events"
+            limit={6}
+            page={1}
+            totalPages={2}
+          />
         </section>
       </section>
     </>
