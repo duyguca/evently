@@ -1,4 +1,4 @@
-// import CheckoutButton from "@/components/shared/CheckoutButton";
+import CheckoutButton from "@/components/shared/CheckoutButton";
 import Collection from "@/components/shared/Collection";
 import {
   getEventById,
@@ -19,7 +19,7 @@ const EventDetails = async ({
     eventId: event._id,
     page: searchParams.page as string,
   });
-
+  console.log({ duygu: event });
   return (
     <>
       <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
@@ -49,13 +49,13 @@ const EventDetails = async ({
                 <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
                   by{" "}
                   <span className="text-primary-500">
-                    {event.organizer.firstName} {event.organizer.lastName}
+                    {event?.organizer?.firstName} {event?.organizer?.lastName}
                   </span>
                 </p>
               </div>
             </div>
 
-            {/* <CheckoutButton event={event} /> */}
+            <CheckoutButton event={event} />
 
             <div className="flex flex-col gap-5">
               <div className="flex gap-2 md:gap-3">

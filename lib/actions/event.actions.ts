@@ -33,6 +33,7 @@ const populateEvent = (query: any) => {
 
 // CREATE
 export async function createEvent({ userId, event, path }: CreateEventParams) {
+  // The function begins with a try block to catch any potential errors.
   try {
     await connectToDatabase();
 
